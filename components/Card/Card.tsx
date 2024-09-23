@@ -12,8 +12,14 @@ const Card = ({ id, date, name, question }: CardProps) => {
   return (
     <Link href={`/question/${id}`} className={styles.main}>
       <h2>{date}</h2>
-      <p>{question}</p>
-      <p>{name}</p>
+      <div className={styles.question}>
+        <label className={styles.label}>Question:</label>
+        <p>{question}</p>
+      </div>
+      <div className={styles.postedby}>
+        <label className={styles.label}>Posted by :</label>
+        <p>{name}</p>
+      </div>
     </Link>
   );
 };

@@ -10,7 +10,7 @@ type PageTemplateProps = {
 };
 
 const PageTemplate = ({ children }: PageTemplateProps) => {
-  const [isUserLoggedIn, setUserLoggedIn] = useState(true);
+  const [isUserLoggedIn, setUserLoggedIn] = useState(false);
   const router = useRouter();
 
   const validateUser = async () => {

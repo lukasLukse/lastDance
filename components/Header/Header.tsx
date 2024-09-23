@@ -33,6 +33,9 @@ const Header: FC<HeaderProps> = ({ isUserLoggedIn }) => {
               <Link href="/">Home</Link>
             </li>
             <li>
+              <Link href="/public">Public</Link>
+            </li>
+            <li>
               <button className={styles.signOutButton} onClick={signOutUser}>
                 SIGN OUT
               </button>

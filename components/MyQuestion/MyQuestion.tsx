@@ -3,10 +3,12 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
+import cookie from "js-cookie";
 import { deleteMyQuestion } from "../../apiCalls/questions";
 
 type MyQuestionProps = {
   id: string;
+  userId: string;
   name: string;
   date: string;
   question: string;
@@ -16,8 +18,13 @@ const MyQuestion = ({ id, name, date, question }: MyQuestionProps) => {
   const router = useRouter();
   const [isModalVisible, setModalVisible] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const userId = cookie.get("userId");
 
   const deleteQuestion = async () => {
+    // if (userId !== userId) {
+    //   console.log(userId);
+    //   return;
+    // }
     try {
       setIsDeleting(true);
       const response = await deleteMyQuestion({ id });
@@ -46,9 +53,12 @@ const MyQuestion = ({ id, name, date, question }: MyQuestionProps) => {
   return (
     <div className={styles.main}>
       <div className={styles.itemInfo}>
-        <h2>{name}</h2>
-        <h3>{date}</h3>
-        <h3>{question}</h3>
+        <label>Time:</label>
+        <h4>{date}</h4>
+        <label>Question:</label>
+        <h2>{question}</h2>
+        <label>Posted by :</label>
+        <h3>{name}</h3>
         <Button
           title="Delete Question"
           onClick={() => setModalVisible(true)}

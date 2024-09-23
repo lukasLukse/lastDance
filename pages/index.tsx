@@ -25,7 +25,6 @@ export default function Home() {
       });
 
       setQuestions(response.data.questions);
-      console.log(response.data.question);
     } catch (err) {
       console.log(err);
     }

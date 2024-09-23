@@ -40,7 +40,7 @@ const CreateQuestion = () => {
       );
 
       if (response.status === 201) {
-        router.push("/");
+        window.location.reload();
       }
     } catch (err) {
       setError("Failed to submit the question. Please try again.");

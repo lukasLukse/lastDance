@@ -23,9 +23,8 @@ const QuestionPage = () => {
         { headers }
       );
 
-      console.log(response);
-
       setQuestion(response.data.questions);
+      console.log(response.data.questions);
     } catch (err) {
       console.log("Error:", err);
     }
@@ -42,6 +41,7 @@ const QuestionPage = () => {
         {question && (
           <MyQuestion
             id={question.id}
+            userId={question.id}
             name={question.name}
             date={question.date}
             question={question.question}
