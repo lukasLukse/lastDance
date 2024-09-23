@@ -9,16 +9,15 @@ type CardWrapperProps = {
 const CardWrapper = ({ questions = [] }: CardWrapperProps) => {
   return (
     <div className={styles.main}>
-      {questions.map((question) => {
-        return (
-          <Card
-            id={question.id}
-            key={question.id}
-            date={question.date}
-            question={question.question}
-          />
-        );
-      })}
+      {questions.map((question) => (
+        <Card
+          id={question.id}
+          key={question.id}
+          date={question.date}
+          question={question.question}
+          name={question.name}
+        />
+      ))}
     </div>
   );
 };

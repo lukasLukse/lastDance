@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import styles from "../styles/Home.module.css";
 import axios from "axios";
 import cookie from "js-cookie";
 import CardWrapper from "../components/CardWrapper/CardWrapper";
 import { Question } from "@/types/questions";
 import { useRouter } from "next/router";
 import PageTemplate from "@/components/PageTemplate/PageTemplate";
+import CreateQuestion from "@/components/CreateQuestion/CreateQuestion";
 
 export default function Home() {
   const router = useRouter();
@@ -40,7 +42,10 @@ export default function Home() {
   return (
     <>
       <PageTemplate>
-        <CardWrapper questions={questions} />
+        <div className={styles.main}>
+          <CreateQuestion />
+          <CardWrapper questions={questions} />
+        </div>
       </PageTemplate>
     </>
   );

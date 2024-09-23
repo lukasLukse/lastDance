@@ -6,6 +6,12 @@ type LoginProps = {
   password: string;
 };
 
+type RegisterProps = {
+  name: string;
+  email: string;
+  password: string;
+};
+
 export const login = async ({ email, password }: LoginProps) => {
   const body = {
     email: email,
@@ -16,6 +22,16 @@ export const login = async ({ email, password }: LoginProps) => {
   return response;
 };
 
+export const register = async ({ name, email, password }: RegisterProps) => {
+  const body = {
+    name,
+    email,
+    password,
+  };
+
+  const response = await axios.post(`${process.env.SERVER_URL}/register`, body);
+  return response;
+};
 export const validateUse = async () => {
   const jwt = cookie.get("questions_app_jwt");
 

@@ -1,5 +1,6 @@
 .main {
   display: block;
+  width: 80%;
   padding: 16px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -19,19 +20,12 @@
 .main h2 {
   margin: 0;
   font-size: 16px;
-  color: #888;
+  color: #4d4d4d;
   font-weight: normal;
-}
-
-.main h3 {
-  margin: 5px 0;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
 }
 
 .main p {
   margin: 8px 0 0;
   font-size: 16px;
-  color: #555;
+  color: #000000;
 }

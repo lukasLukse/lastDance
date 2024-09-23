@@ -1,16 +1,14 @@
-import Header from "../../components/Header/Header";
 import SignUpForm from "@/components/SignUpForm/SignUpForm";
-import React from "react";
+import styles from "./styles.module.css";
+import PageTemplate from "@/components/PageTemplate/PageTemplate";
 
 const SingupPage = () => {
   return (
-    <div>
-      <Header isUserLoggedIn={false} />
-      <h1 style={{ textAlign: "center", marginTop: "5rem" }}>
-        Login to Inventory App
-      </h1>
-      <SignUpForm />
-    </div>
+    <PageTemplate>
+      <div className={styles.main}>
+        <SignUpForm />
+      </div>
+    </PageTemplate>
   );
 };
 

@@ -3,15 +3,17 @@ import Link from "next/link";
 
 type CardProps = {
   id: string;
+  name: string;
   date: string;
   question: string;
 };
 
-const Card = ({ id, date, question }: CardProps) => {
+const Card = ({ id, date, name, question }: CardProps) => {
   return (
-    <Link href={`/questions/${id}`} className={styles.main}>
+    <Link href={`/question/${id}`} className={styles.main}>
       <h2>{date}</h2>
       <p>{question}</p>
+      <p>{name}</p>
     </Link>
   );
 };

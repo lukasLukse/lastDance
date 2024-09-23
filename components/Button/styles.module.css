@@ -1,5 +1,6 @@
 .main {
-  background-color: #3498db;
+  width: 30%;
+  background-color: var(--third-color);
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
@@ -7,7 +8,7 @@
   font-weight: 600;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +17,7 @@
 }
 
 .main:hover {
-  background-color: #2980b9;
+  background-color: var(--second-color);
 }
 
 .main:active {

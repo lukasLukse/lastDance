@@ -1,5 +1,8 @@
 :root {
-  --primary-color: rgb(146, 212, 250);
+  --first-color: #222831;
+  --second-color: #393e46;
+  --third-color: #f96d00;
+  --fourth-color: #f2f2f2;
 }
 
 * {
