@@ -1,6 +1,6 @@
 .main {
   display: block;
-  width: 80%;
+  width: 100%;
   padding: 16px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -9,6 +9,7 @@
   transition: 0.3s;
   text-decoration: none;
   color: inherit;
+  box-sizing: border-box;
 }
 
 .main:hover {

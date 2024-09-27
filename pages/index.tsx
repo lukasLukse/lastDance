@@ -7,7 +7,6 @@ import { Question } from "@/types/questions";
 import { useRouter } from "next/router";
 import PageTemplate from "@/components/PageTemplate/PageTemplate";
 import CreateQuestionForm from "@/components/CreateQuestionForm/CreateQuestionForm";
-import PublicQuestions from "@/components/PublicQuestions/PublicQuestions";
 
 export default function Home() {
   const router = useRouter();
@@ -45,9 +44,20 @@ export default function Home() {
       <PageTemplate>
         <div className={styles.main}>
           <CreateQuestionForm />
-          <PublicQuestions questions={questions} />
+          <CardWrapper questions={questions} answers={[]} />
         </div>
       </PageTemplate>
     </>
   );
 }
+
+// - Registruotis V
+// - Prisijungti V
+// - Užduoti naują klausimą (tik prisijungus) V
+// - Ištrinti klausimą (tik prisiijungus) V
+// - Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA V
+// - Ištrinti atsakymą (tik prisijungus) // EXTRA V
+// - Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
+// - Peržiūrėti klausimų sąrašą. V
+// - Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA V
+// - Peržiūrėti klausimų atsakymus V

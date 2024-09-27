@@ -21,7 +21,7 @@
   border-image-slice: 1;
   overflow: hidden;
   box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .itemInfo {
@@ -47,6 +47,8 @@
   color: #333;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .itemInfo h3 {
