@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
@@ -15,16 +15,49 @@ const PublicQuestionsCard = ({
   name,
   question,
 }: PublicQuestionsCardProps) => {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  const [likes, setLikes] = useState(() => {
+    const savedLikes = localStorage.getItem(`likes-${id}`);
+    return savedLikes ? Number(savedLikes) : 0;
+  });
+
+  const [dislikes, setDislikes] = useState(() => {
+    const savedDislikes = localStorage.getItem(`dislikes-${id}`);
+    return savedDislikes ? Number(savedDislikes) : 0;
+  });
+
+  const [userAction, setUserAction] = useState(() => {
+    const likedStatus = localStorage.getItem(`userAction-${id}`);
+    return likedStatus ? likedStatus : null;
+  });
 
   const handleLike = () => {
-    setLikes((prev) => prev + 1);
+    if (userAction !== "like") {
+      setLikes((prev) => prev + 1);
+      setUserAction("like");
+      localStorage.setItem(`userAction-${id}`, "like");
+
+      if (userAction === "dislike") {
+        setDislikes((prev) => prev - 1);
+      }
+    }
   };
 
   const handleDislike = () => {
-    setDislikes((prev) => prev + 1);
+    if (userAction !== "dislike") {
+      setDislikes((prev) => prev + 1);
+      setUserAction("dislike");
+      localStorage.setItem(`userAction-${id}`, "dislike");
+
+      if (userAction === "like") {
+        setLikes((prev) => prev - 1);
+      }
+    }
   };
+
+  useEffect(() => {
+    localStorage.setItem(`likes-${id}`, likes.toString());
+    localStorage.setItem(`dislikes-${id}`, dislikes.toString());
+  }, [likes, dislikes, id]);
 
   return (
     <div className={styles.main}>
@@ -40,10 +73,18 @@ const PublicQuestionsCard = ({
         </div>
       </Link>
       <div className={styles.buttons}>
-        <button onClick={handleLike} className={styles.likeButton}>
+        <button
+          onClick={handleLike}
+          className={styles.likeButton}
+          disabled={userAction === "like"}
+        >
           👍 {likes}
         </button>
-        <button onClick={handleDislike} className={styles.dislikeButton}>
+        <button
+          onClick={handleDislike}
+          className={styles.dislikeButton}
+          disabled={userAction === "dislike"}
+        >
           👎 {dislikes}
         </button>
       </div>

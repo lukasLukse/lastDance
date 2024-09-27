@@ -30,8 +30,14 @@ export const register = async ({ name, email, password }: RegisterProps) => {
   };
 
   const response = await axios.post(`${process.env.SERVER_URL}/register`, body);
+
+  if (response.status === 200) {
+    cookie.set("user_name", name);
+  }
+
   return response;
 };
+
 export const validateUse = async () => {
   const jwt = cookie.get("questions_app_jwt");
 
