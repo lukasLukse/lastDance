@@ -48,7 +48,7 @@ const SignUpForm = () => {
       if (response.status === 201) {
         console.log(response.data);
         cookie.set(process.env.JWT_KEY as string, response.data.token);
-        cookie.set("user_id", response.data.userrId);
+        cookie.set("user_id", response.data.userId);
         router.push("/");
       } else {
         setShowError(true);
