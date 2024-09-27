@@ -3,12 +3,10 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
-import cookie from "js-cookie";
 import { deleteMyQuestion } from "../../apiCalls/questions";
 
 type MyQuestionProps = {
   id: string;
-  userId: string;
   name: string;
   date: string;
   question: string;
@@ -18,17 +16,13 @@ const MyQuestion = ({ id, name, date, question }: MyQuestionProps) => {
   const router = useRouter();
   const [isModalVisible, setModalVisible] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const userId = cookie.get("userId");
 
   const deleteQuestion = async () => {
-    // if (userId !== userId) {
-    //   console.log(userId);
-    //   return;
-    // }
     try {
       setIsDeleting(true);
       const response = await deleteMyQuestion({ id });
 
+      console.log(deleteMyQuestion);
       if (response.status === 200) {
         router.push("/");
       } else {

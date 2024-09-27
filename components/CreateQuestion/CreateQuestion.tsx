@@ -3,7 +3,6 @@ import styles from "./styles.module.css";
 import Button from "../Button/Button";
 import cookie from "js-cookie";
 import axios from "axios";
-import { useRouter } from "next/router";
 
 const CreateQuestion = () => {
   const [name, setName] = useState<string>("");
@@ -11,7 +10,6 @@ const CreateQuestion = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const router = useRouter();
   const jwt = cookie.get("questions_app_jwt");
 
   const addQuestion = async () => {

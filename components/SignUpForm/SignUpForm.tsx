@@ -25,7 +25,7 @@ const SignUpForm = () => {
 
       if (response.status === 200) {
         cookie.set(process.env.JWT_KEY as string, response.data.token);
-        cookie.set("userId", response.data.userId);
+        cookie.set("user_id", response.data.userId);
         router.push("/");
       } else {
         setShowError(true);
@@ -46,8 +46,9 @@ const SignUpForm = () => {
       const response = await register({ name, email, password });
 
       if (response.status === 201) {
+        console.log(response.data);
         cookie.set(process.env.JWT_KEY as string, response.data.token);
-        cookie.set("userId", response.data.userId);
+        cookie.set("user_id", response.data.userrId);
         router.push("/");
       } else {
         setShowError(true);

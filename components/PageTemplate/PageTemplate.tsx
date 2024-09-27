@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { validateUse as validateUserApi } from "../../apiCalls/user";
+import { validateUse as validateUserApp } from "../../apiCalls/user";
 
 type PageTemplateProps = {
   children: ReactNode;
@@ -15,7 +15,7 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
 
   const validateUser = async () => {
     try {
-      const response = await validateUserApi();
+      const response = await validateUserApp();
       if (response.status !== 200) {
         router.push("/signup");
       }
