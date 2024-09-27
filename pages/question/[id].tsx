@@ -66,6 +66,7 @@ const QuestionPage = () => {
             name={question.name}
             date={question.date}
             question={question.question}
+            userId={question.userId}
           />
         )}
       </div>

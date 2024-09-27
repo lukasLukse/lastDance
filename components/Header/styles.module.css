@@ -103,6 +103,17 @@
 .signOutButton:active {
   transform: scale(0.95);
 }
+.rigtHandSection {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  margin-left: 20px;
+  padding: 5px;
+  font-size: 14px;
+  color: #fff;
+}
 
 @media (max-width: 768px) {
   .main {
