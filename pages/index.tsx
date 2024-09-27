@@ -6,7 +6,7 @@ import CardWrapper from "../components/CardWrapper/CardWrapper";
 import { Question } from "@/types/questions";
 import { useRouter } from "next/router";
 import PageTemplate from "@/components/PageTemplate/PageTemplate";
-import CreateQuestion from "@/components/CreateQuestion/CreateQuestion";
+import CreateQuestionForm from "@/components/CreateQuestionForm/CreateQuestionForm";
 
 export default function Home() {
   const router = useRouter();
@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <PageTemplate>
         <div className={styles.main}>
-          <CreateQuestion />
+          <CreateQuestionForm />
           <CardWrapper questions={questions} />
         </div>
       </PageTemplate>

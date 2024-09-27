@@ -1,6 +1,8 @@
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 80%;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 60%;
   margin: 0 auto;
+  box-sizing: border-box;
 }

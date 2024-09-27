@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import cookie from "js-cookie";
 import axios from "axios";
 
-const CreateQuestion = () => {
+const CreateQuestionForm = () => {
   const [name, setName] = useState<string>("");
   const [question, setQuestion] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -73,4 +73,4 @@ const CreateQuestion = () => {
   );
 };
 
-export default CreateQuestion;
+export default CreateQuestionForm;

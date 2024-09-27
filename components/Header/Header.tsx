@@ -33,7 +33,7 @@ const Header: FC<HeaderProps> = ({ isUserLoggedIn }) => {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/public">Public</Link>
+              <Link href="/questions">Public</Link>
             </li>
             <li>
               <button className={styles.signOutButton} onClick={signOutUser}>

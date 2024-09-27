@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <PageTemplate>
       <div className={styles.header}>
-        <h1>ALL QUESTIONS ARE PUBLISHED:</h1>
+        <h1>ALL QUESTIONS :</h1>
       </div>
       <CardWrapper questions={questions} />
     </PageTemplate>

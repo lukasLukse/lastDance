@@ -22,7 +22,6 @@ const MyQuestion = ({ id, name, date, question }: MyQuestionProps) => {
       setIsDeleting(true);
       const response = await deleteMyQuestion({ id });
 
-      console.log(deleteMyQuestion);
       if (response.status === 200) {
         router.push("/");
       } else {
