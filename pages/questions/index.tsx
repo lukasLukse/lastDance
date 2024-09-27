@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PageTemplate from "@/components/PageTemplate/PageTemplate";
-import CardWrapper from "@/components/CardWrapper/CardWrapper";
 import styles from "./styles.module.css";
+import PublicQuestions from "@/components/PublicQuestions/PublicQuestions";
 
 export default function Home() {
   const [questions, setQuestions] = useState([]);
@@ -25,9 +25,15 @@ export default function Home() {
   return (
     <PageTemplate>
       <div className={styles.header}>
-        <h1>ALL QUESTIONS :</h1>
+        {questions.length > 0 ? (
+          <>
+            <h1>ALL QUESTIONS :</h1>
+            <PublicQuestions questions={questions} />
+          </>
+        ) : (
+          <h1>No posted questions.</h1>
+        )}
       </div>
-      <CardWrapper questions={questions} />
     </PageTemplate>
   );
 }

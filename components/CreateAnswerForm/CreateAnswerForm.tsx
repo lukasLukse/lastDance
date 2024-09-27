@@ -3,17 +3,19 @@ import styles from "./styles.module.css";
 import Button from "../Button/Button";
 import cookie from "js-cookie";
 import axios from "axios";
+import { useRouter } from "next/router";
 
-const CreateQuestion = () => {
+const CreateAnswerForm = () => {
   const [name, setName] = useState<string>("");
-  const [question, setQuestion] = useState<string>("");
+  const [answerText, setAnswerText] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+  const router = useRouter();
   const jwt = cookie.get("questions_app_jwt");
 
-  const addQuestion = async () => {
-    if (!name || !question) {
+  const addAnswer = async () => {
+    if (!name || !answerText) {
       setError("Both fields are required.");
       return;
     }
@@ -23,16 +25,16 @@ const CreateQuestion = () => {
 
     try {
       const body = {
-        name: name,
-        question: question,
+        name,
+        answerText,
       };
 
       const headers = {
-        authorization: jwt,
+        Authorization: jwt,
       };
 
       const response = await axios.post(
-        `${process.env.SERVER_URL}/question`,
+        `${process.env.SERVER_URL}/answers/${router.query.id}`,
         body,
         { headers }
       );
@@ -41,7 +43,7 @@ const CreateQuestion = () => {
         window.location.reload();
       }
     } catch (err) {
-      setError("Failed to submit the question. Please try again.");
+      setError("Failed to submit the answer. Please try again.");
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -50,7 +52,7 @@ const CreateQuestion = () => {
 
   return (
     <div className={styles.main}>
-      <h1>Ask a question:</h1>
+      <h1>Answer the question:</h1>
       <input
         value={name}
         placeholder="Name"
@@ -58,19 +60,15 @@ const CreateQuestion = () => {
         onChange={(e) => setName(e.target.value)}
       />
       <input
-        value={question}
-        placeholder="Your question?"
+        value={answerText}
+        placeholder="Your answer?"
         type="text"
-        onChange={(e) => setQuestion(e.target.value)}
+        onChange={(e) => setAnswerText(e.target.value)}
       />
       {error && <div className={styles.error}>{error}</div>}
-      <Button
-        isLoading={isLoading}
-        title="Submit Question"
-        onClick={addQuestion}
-      />
+      <Button isLoading={isLoading} title="Submit Answer" onClick={addAnswer} />
     </div>
   );
 };
 
-export default CreateQuestion;
+export default CreateAnswerForm;

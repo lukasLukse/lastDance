@@ -1,0 +1,41 @@
+.main {
+  display: block;
+  width: 80%;
+  padding: 16px;
+  margin: 10px 0;
+  border: 1px solid #0fff7b;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main:hover {
+  box-shadow: 0 4px 8px rgba(0, 255, 136, 0.274);
+  transform: translateY(-2px);
+  border-color: #0fff7b;
+}
+
+.main h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #4d4d4d;
+  font-weight: normal;
+}
+
+.main p {
+  margin: 0px;
+  font-size: 16px;
+  color: #000000;
+}
+.question {
+  margin-top: 1rem;
+}
+.postedby {
+  margin-top: 1rem;
+}
+.label {
+  margin: 0;
+  color: #4d4d4d;
+}
