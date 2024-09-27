@@ -2,7 +2,7 @@ import { Question } from "@/types/questions";
 import styles from "./styles.module.css";
 import Card from "../Card/Card";
 import { Answer } from "@/types/answers";
-import MyAnswer from "../MyAnswer/MyAnswer"; // Ensure you import MyAnswer
+import MyAnswer from "../MyAnswer/MyAnswer";
 
 type CardWrapperProps = {
   questions: Question[];
