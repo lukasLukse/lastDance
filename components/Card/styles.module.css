@@ -74,3 +74,10 @@
   background-color: red;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .main {
+    width: 500px;
+    box-sizing: border-box;
+  }
+}
