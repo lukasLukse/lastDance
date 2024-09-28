@@ -44,7 +44,7 @@ export default function Home() {
       <PageTemplate>
         <div className={styles.main}>
           <CreateQuestionForm />
-          <CardWrapper questions={questions} answers={[]} />
+          <CardWrapper questions={questions} />
         </div>
       </PageTemplate>
     </>

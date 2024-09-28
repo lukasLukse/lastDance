@@ -17,7 +17,7 @@ const MyAnswer = ({ id, date, name, answerText }: MyAnswerProps) => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const deleteQuestion = async () => {
+  const deleteAnswers = async () => {
     try {
       setIsDeleting(true);
       const response = await deleteAnswer({ id });
@@ -35,7 +35,7 @@ const MyAnswer = ({ id, date, name, answerText }: MyAnswerProps) => {
   };
 
   const handleConfirmDelete = () => {
-    deleteQuestion();
+    deleteAnswers();
     setModalVisible(false);
   };
 

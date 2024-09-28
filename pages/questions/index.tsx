@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import PageTemplate from "@/components/PageTemplate/PageTemplate";
 import styles from "./styles.module.css";
-import PublicQuestions from "@/components/PublicQuestions/PublicQuestions";
+import CardWrapper from "@/components/CardWrapper/CardWrapper";
 
 export default function Home() {
   const [questions, setQuestions] = useState([]);
@@ -28,7 +28,7 @@ export default function Home() {
         {questions.length > 0 ? (
           <>
             <h1>ALL QUESTIONS :</h1>
-            <PublicQuestions questions={questions} />
+            <CardWrapper questions={questions} />
           </>
         ) : (
           <h1>No posted questions.</h1>

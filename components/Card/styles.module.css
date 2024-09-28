@@ -1,6 +1,6 @@
 .main {
   display: block;
-  width: 100%;
+  width: 600px;
   padding: 16px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -10,6 +10,11 @@
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
+}
+
+.link {
+  list-style: none;
+  text-decoration: none;
 }
 
 .main:hover {
@@ -39,4 +44,33 @@
 .label {
   margin: 0;
   color: #4d4d4d;
+}
+.buttons {
+  margin: 1rem;
+}
+
+.likeButton {
+  margin: 3px;
+  transition: 0.3s;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 12px;
+}
+
+.dislikeButton {
+  margin: 3px;
+  transition: 0.3s;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 12px;
+}
+.likeButton:hover {
+  margin: 3px;
+  background-color: green;
+  color: white;
+}
+.dislikeButton:hover {
+  margin: 3px;
+  background-color: red;
+  color: white;
 }

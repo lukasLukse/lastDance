@@ -14,6 +14,7 @@ const CardWrapper = ({ questions = [] }: CardWrapperProps) => {
           <Card
             id={question.id}
             key={question.id}
+            userId={question.userId}
             date={question.date}
             question={question.question}
             name={question.name}
