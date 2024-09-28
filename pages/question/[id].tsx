@@ -63,6 +63,7 @@ const QuestionPage = () => {
         {question && (
           <MyQuestion
             id={question.id}
+            key={question.id}
             name={question.name}
             date={question.date}
             question={question.question}
@@ -78,6 +79,7 @@ const QuestionPage = () => {
           <MyAnswer
             id={answer.id}
             key={answer.id}
+            userId={answer.userId}
             name={answer.name}
             date={answer.date}
             answerText={answer.answerText}

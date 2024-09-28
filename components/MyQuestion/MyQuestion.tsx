@@ -27,7 +27,7 @@ const MyQuestion = ({ id, name, date, question, userId }: MyQuestionProps) => {
       const response = await deleteMyQuestion({ id });
 
       if (response.status === 200) {
-        router.push("/");
+        router.push("/questions");
       } else {
         console.error("Failed to delete the question");
       }
