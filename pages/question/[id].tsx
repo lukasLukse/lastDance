@@ -72,9 +72,6 @@ const QuestionPage = () => {
         )}
       </div>
       <div>
-        <CreateAnswerForm />
-      </div>
-      <div>
         {answers.map((answer) => (
           <MyAnswer
             id={answer.id}
@@ -85,6 +82,9 @@ const QuestionPage = () => {
             answerText={answer.answerText}
           />
         ))}
+      </div>
+      <div>
+        <CreateAnswerForm />
       </div>
     </PageTemplate>
   );

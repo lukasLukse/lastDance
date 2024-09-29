@@ -35,7 +35,7 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
     <div className={styles.wrapper}>
       <Header isUserLoggedIn={isUserLoggedIn} />
       <div className={styles.main}>{children}</div>
-      <Footer copyrightTitle="&#169; made by LUKŠĖ" />
+      <Footer copyrightTitle="&#169; LUKŠĖS, LTU, Inc: All rights reserved." />
     </div>
   );
 };

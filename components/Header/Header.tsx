@@ -30,10 +30,10 @@ const Header: FC<HeaderProps> = ({ isUserLoggedIn }) => {
         <div className={styles.rigtHandSection}>
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/">Ask</Link>
             </li>
             <li>
-              <Link href="/questions">Public</Link>
+              <Link href="/questions">Questions</Link>
             </li>
             <li>
               <button className={styles.signOutButton} onClick={signOutUser}>

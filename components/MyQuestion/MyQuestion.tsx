@@ -49,6 +49,7 @@ const MyQuestion = ({ id, name, date, question, userId }: MyQuestionProps) => {
 
   return (
     <div className={styles.main}>
+      <h1>Question:</h1>
       <div className={styles.itemInfo}>
         <label>Time:</label>
         <h4>{date}</h4>

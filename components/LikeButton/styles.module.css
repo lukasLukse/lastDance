@@ -1,0 +1,18 @@
+.likeButton {
+  display: flex;
+  justify-content: end;
+  margin-top: 8px;
+}
+
+.likeButton button {
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.likeButton button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

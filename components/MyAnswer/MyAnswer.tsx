@@ -48,6 +48,7 @@ const MyAnswer = ({ id, date, name, answerText, userId }: MyAnswerProps) => {
   };
   return (
     <div className={styles.main}>
+      <h1>Answer:</h1>
       <div className={styles.itemInfo}>
         <label>Date:</label>
         <h4>{date}</h4>
