@@ -9,5 +9,6 @@
 
 @media (max-width: 768px) {
   .main {
+    justify-content: center;
   }
 }
