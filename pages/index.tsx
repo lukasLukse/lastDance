@@ -50,14 +50,3 @@ export default function Home() {
     </>
   );
 }
-
-// - Registruotis V
-// - Prisijungti V
-// - Užduoti naują klausimą (tik prisijungus) V
-// - Ištrinti klausimą (tik prisiijungus) V
-// - Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA V
-// - Ištrinti atsakymą (tik prisijungus) // EXTRA V
-// - Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
-// - Peržiūrėti klausimų sąrašą. V
-// - Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA V
-// - Peržiūrėti klausimų atsakymus V
