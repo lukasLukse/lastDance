@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   env: {
-    SERVER_URL: "http://localhost:3002",
+    SERVER_URL: "https://galutinisdarbas.onrender.com",
     JWT_KEY: "questions_app_jwt",
   },
 };
