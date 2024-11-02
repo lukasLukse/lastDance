@@ -10,5 +10,6 @@
 @media (max-width: 768px) {
   .main {
     justify-content: center;
+    padding: 1rem 0;
   }
 }
