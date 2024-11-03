@@ -63,6 +63,9 @@ const SignUpForm = () => {
 
   return (
     <div className={styles.main}>
+      <div className={styles.header}>
+        <h1>ASK-FM</h1>
+      </div>
       {isRegistering && (
         <div className={styles.inputContainer}>
           <label className={styles.label}>Name :</label>

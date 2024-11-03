@@ -5,7 +5,6 @@ import cookie from "js-cookie";
 import axios from "axios";
 
 const CreateQuestion = () => {
-  const [name, setName] = useState<string>("");
   const [question, setQuestion] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -13,8 +12,8 @@ const CreateQuestion = () => {
   const jwt = cookie.get("questions_app_jwt");
 
   const addQuestion = async () => {
-    if (!name || !question) {
-      setError("Both fields are required.");
+    if (!question) {
+      setError("Question field is required.");
       return;
     }
 
@@ -23,7 +22,7 @@ const CreateQuestion = () => {
 
     try {
       const body = {
-        name: name,
+        userId: jwt ? JSON.parse(atob(jwt.split(".")[1])).userId : null,
         question: question,
       };
 
@@ -51,12 +50,6 @@ const CreateQuestion = () => {
   return (
     <div className={styles.main}>
       <h1>Ask a question:</h1>
-      <input
-        value={name}
-        placeholder="Name"
-        type="text"
-        onChange={(e) => setName(e.target.value)}
-      />
       <input
         value={question}
         placeholder="Your question?"
