@@ -68,6 +68,17 @@
 
 @media (max-width: 768px) {
   .main {
-    width: 60%;
+    width: 80%;
+    padding: 2rem;
+  }
+
+  .input {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .error {
+    font-size: 13px;
+    padding: 6px;
   }
 }
